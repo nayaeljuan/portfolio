@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coloriages engagés</title>
+    <link rel="stylesheet" href="style2.css">
+
+</head>
+<header><h1>Coloriages engagés</h1></header>
+<body>
+<div class="images-projet">
+    <img src="images/coloriage vivre ensemble.jpg" onclick="openModal();currentSlide(1)">
+    <img src="images/coloriage cleanwalk.jpg" onclick="openModal();currentSlide(2)">
+    <img src="images/coloriage compost.jpg" onclick="openModal();currentSlide(3)">
+</div>
+<div class="texte" id="photonarrativestxt">
+<h3>2022</h3>
+<p>Coloriages de sensibilisation a differents gestes en faveurs du developement durable. Je les aient créés pendant mon service civique sur l’ecologie dans une auberge de jeunesse.</p>
+</div>
+<div id="myModal" class="modal">
+    <span class="close cursor" onclick="closeModal()">&times;</span>
+    <div class="modal-content">
+      <div class="mySlides"><img src="images/coloriage vivre ensemble.jpg" style="height:100vh;"></div>
+      <div class="mySlides"><img src="images/coloriage cleanwalk.jpg" style="height:100vh;"></div>
+      <div class="mySlides"><img src="images/coloriage compost.jpg" style="height:100vh;"></div>
+     
+
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+</div>
+<a href="index.html #contenu">
+    <img src="images/homebutton.png" id="home-button">
+</a>  
+<script>
+    function openModal() {
+        document.getElementById("myModal").style.display = "block";
+    }
+
+    function closeModal() {
+        document.getElementById("myModal").style.display = "none";
+    }
+
+    let slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+        let i;
+        const slides = document.getElementsByClassName("mySlides");
+        if (n > slides.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        slides[slideIndex - 1].style.display = "block";
+    }
+</script>  
+</body>
+</html>

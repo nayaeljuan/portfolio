@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Série d'illustrations</title>
+    <link rel="stylesheet" href="style2.css">
+
+</head>
+<header><h1>Série d'illustrations</h1></header>
+<body>
+<div class="images-projet">
+    <img src="images/maison-couleur.jpg" alt="protrait craie"onclick="openModal();currentSlide(1)">
+    <img src="book source/dessin couleur/dessin-couleur.jpg" alt="protrait craie"onclick="openModal();currentSlide(2)">
+    <div class="images-projet-line">
+        <img src="book source/dessin couleur/extraterrestre craie grasse.jpg" alt="protrait craie"onclick="openModal();currentSlide(3)">
+        <img src="images/portrait craie.jpg" alt="protrait craie"onclick="openModal();currentSlide(4)">
+    </div>    
+    <img src="book source/dessin couleur/araignée geante couleur 1.jpg" alt="protrait craie"onclick="openModal();currentSlide(5)">
+    <img src="book source/dessin couleur/poignard.jpg" alt="protrait craie"onclick="openModal();currentSlide(6)">
+</div>
+<div class="texte" id="photonarrativestxt">
+    <h3>Pastels a l'huile, acrylique sur carton, 2024</h3>
+    <p>Ces illustrations s’inscrivent dans une recherche à la fois visuelle et théorique. Celle-ci portait sur les différentes utilisations du dessin, du trait et de la couleur susceptibles de provoquer un sentiment de malaise. Pour certaines images, j’ai poursuivi l’exploration de la manière de photographier la peinture que j'avais commencé dans <a href="ppea.html">ce projet-ci.</a>
+    </p>
+    <h2>Référence(s)</h2>
+    <figure>
+        <img src="images/Francisco_de_Goya.jpg" id="saturne">
+        <figcaption id="petitecaption"><strong>Francisco Goya, <em>Saturne dévorant un de ses fils</em><br> 1819-1823</strong> <br> Cette peinture de Francisco Goya, <em>>Saturne dévorant un de ses enfants</em>, m’a inspiré par ses contrastes et ses traits « rugueux », qui renforcent l’aspect dramatique. Les yeux écarquillés et blancs de Saturne, à la fois vides et fous, m’ont particulièrement marqué et ont influencé ma manière de représenter le regard dans certaines de mes productions.
+        </figcaption>
+    </figure>
+    <figure id="figureleft">
+        <img src="images/the-kid-and-the-camera.jpg" id="kid-and-the-camera">
+        <figcaption id="petitecaptionleft"><strong>Braiden Ortiz, <em>The kid and the camera,</em> 2022</strong><br> <em>The Kid and the Camera</em> est un court métrage en 3D qui raconte l’histoire d’un enfant se liant d’amitié avec une créature qui finit par le tuer. Le décalage entre le ton de la vidéo (décors enfantins et narration enjouée) et les événements qu’elle relate crée un sentiment de malaise de manière très efficace.
+        </figcaption>
+    </figure>
+    <a href="https://drive.google.com/file/d/1-bug4La6iGNMlQtXqTvtsAfLzOk9KnKt/view?usp=sharing" target="_blank" id="carte-mentale">
+       <h2>Carte mentale du projet</h2>
+    </a>
+</div>
+<div id="myModal" class="modal">
+    <span class="close cursor" onclick="closeModal()">&times;</span>
+    <div class="modal-content">
+      <div class="mySlides"><img src="images/maison-couleur.jpg" style="height:100vh;"></div>
+      <div class="mySlides"><img src="book source/dessin couleur/dessin-couleur.jpg" style="height:100vh;"></div>
+      <div class="mySlides"><img src="book source/dessin couleur/extraterrestre craie grasse.jpg" style="height:100vh;"></div>
+      <div class="mySlides"><img src="images/portrait craie.jpg" style="height: 50vh;"></div>
+      <div class="mySlides"><img src="book source/dessin couleur/araignée geante couleur 1.jpg" style="height: 70vh;"></div>
+      <div class="mySlides"><img src="book source/dessin couleur/poignard.jpg" style="height: 59vh;"></div>
+
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+</div>
+<a href="index.html #contenu">
+    <img src="images/homebutton.png" id="home-button">
+</a>
+<script>
+    function openModal() {
+        document.getElementById("myModal").style.display = "block";
+    }
+
+    function closeModal() {
+        document.getElementById("myModal").style.display = "none";
+    }
+
+    let slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+        let i;
+        const slides = document.getElementsByClassName("mySlides");
+        if (n > slides.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        slides[slideIndex - 1].style.display = "block";
+    }
+</script>
+
+</body>
+</html>

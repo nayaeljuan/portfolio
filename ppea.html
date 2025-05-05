@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photocathedrale</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+<header><h1>Photographier la peinture</h1></header>
+
+<div class="images-projet">
+    <img src="images/tigre.jpg" alt="tigre" onclick="openModal();currentSlide(1)">
+    <img src="./book%20source/PPeA/3.jpg" onclick="openModal();currentSlide(2)">
+    <img src="./book%20source/PPeA/4.jpg" onclick="openModal();currentSlide(3)">
+    <img src="./book%20source/PPeA/5.jpg" onclick="openModal();currentSlide(4)">
+</div>
+
+<div class="texte" id="photonarrativestxt">
+    <h3>2024</h3>
+    <p>J’ai peint ce tigre (peinture à l’huile sur carton) et ce cadre (acrylique sur carton) pour ensuite les utiliser comme accessoires dans ces photos. Mon but était d’utiliser la matérialité des peintures et son rapport aux différents espaces pour les prendre en photo.</p>
+    <h2>Référence(s)</h2>
+    <figure>
+        <img src="images/tim-walker.jpg" id="tim-walker">
+        <figcaption><strong>Tim Walker </strong> <br> Je me suis inspiré du travail de Tim Walker et de son utilisation d’accessoires volontairement factices afin de créer une ambiance surréaliste.</figcaption>
+    </figure>
+</div>
+
+<div id="myModal" class="modal">
+    <span class="close cursor" onclick="closeModal()">&times;</span>
+    <div class="modal-content">
+      <div class="mySlides"><img src="images/tigre.jpg" style="height:100vh;"></div>
+      <div class="mySlides"><img src="./book%20source/PPeA/3.jpg" style="height:100vh;"></div>
+      <div class="mySlides"><img src="./book%20source/PPeA/4.jpg" style="height:100vh;"></div>
+      <div class="mySlides"><img src="./book%20source/PPeA/5.jpg" style="height: 100vh;"></div>
+
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+</div>
+
+<a href="index.html #contenu">
+    <img src="images/homebutton.png" id="home-button">
+</a>
+
+<script>
+    function openModal() {
+        document.getElementById("myModal").style.display = "block";
+    }
+
+    function closeModal() {
+        document.getElementById("myModal").style.display = "none";
+    }
+
+    let slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+        let i;
+        const slides = document.getElementsByClassName("mySlides");
+        if (n > slides.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        slides[slideIndex - 1].style.display = "block";
+    }
+</script>
+
+</body>
+</html>

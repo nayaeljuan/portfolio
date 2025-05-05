@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L'histoire d'une image</title>
+    <link rel="stylesheet" href="style2.css">
+
+</head>
+<header><h1>L'histoire d'une image</h1></header>
+<body>
+<div class="images-projet">
+    <div class="images-projet-line">
+        <img src="book source/carnet n4 1.png" alt="carnet n4" onclick="openModal();currentSlide(1)">
+        <img src="book source/carnet n4 2.png" alt="carnet n4" onclick="openModal();currentSlide(2)">
+    </div>
+    <img src="images/Capture d'écran 2025-03-26 191602.png" alt="version 1" onclick="openModal();currentSlide(3)">
+    <div class="images-projet-line">
+        <img src="book source/edition uli/4.jpg" alt="carnet n4" onclick="openModal();currentSlide(4)">
+        <img src="book source/edition uli/6.jpg" alt="carnet n4" onclick="openModal();currentSlide(5)">
+    </div>
+    <div class="images-projet-line">
+        <img src="book source/edition uli/7.jpg" alt="carnet n4" onclick="openModal();currentSlide(6)">
+        <img src="book source/edition uli/8.jpg" alt="carnet n4" onclick="openModal();currentSlide(7)">
+    </div>
+</div>
+<div class="texte" id="photonarrativestxt">
+    <h3>photocopies, collages, 2024</h3>
+    <p>Carnet fictif d’une personne trouvant une photo maudite. j’y ai créé une narration illustrée a partir d’une seule image (que j’ai décliné en plusieurs versions). La construction de légende autour d’une image ou un objet trouvé m’a été inspiré par le “found footage” et l’histoire étrange derrière la peinture “Man proposes, god disposes” de Edwin Landseer</p>
+    <h2>Référence(s)</h2>
+    <figure>
+        <img src="images/Man_proposes.jpg" id="manproposes">
+        <figcaption><strong>Landseer, <em>Man proposes, god disposes,</em> 1864 </strong> <br> Cette peinture est inspirée d'une éxpedition perdue dans l'artique. On y voit les restes du bateau et de ses passagers, dévorés par des ours polaires. Elle est exposé a l'université de londres, où elle a fait l'objet d'une etrange rumeur&#8239;: la peinture serai en fait maudite et tout ceux qui s'assoient devant durant un examen seraient condamnés à le rater. La rumeur prennant de plus en plus d'ampleur parmis les etudiants, les professeurs ont mis une "mesure de securité"&#8239;: recouvrir le tableau avec le drapeau anglais pendant les examens.</figcaption>
+    </figure>
+</div>
+<div id="myModal" class="modal">
+    <span class="close cursor" onclick="closeModal()">&times;</span>
+    <div class="modal-content">
+      <div class="mySlides"><img src="book source/carnet n4 1.png" style="height:100vh;"></div>
+      <div class="mySlides"><img src="book source/carnet n4 2.png" style="height:100vh;"></div>
+      <div class="mySlides"><img src="images/Capture d'écran 2025-03-26 191602.png" style="height:100vh;"></div>
+      <div class="mySlides"><img src="book source/edition uli/4.jpg" style="height: 100vh;"></div>
+      <div class="mySlides"><img src="book source/edition uli/6.jpg" style="height: 100vh;"></div>
+      <div class="mySlides"><img src="book source/edition uli/7.jpg" style="height: 100vh;"></div>
+      <div class="mySlides"><img src="book source/edition uli/8.jpg" style="height: 100vh;"></div>
+
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+</div>
+<a href="index.html #contenu">
+    <img src="images/homebutton.png" id="home-button">
+</a>
+<script>
+    function openModal() {
+        document.getElementById("myModal").style.display = "block";
+    }
+
+    function closeModal() {
+        document.getElementById("myModal").style.display = "none";
+    }
+
+    let slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+        let i;
+        const slides = document.getElementsByClassName("mySlides");
+        if (n > slides.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        slides[slideIndex - 1].style.display = "block";
+    }
+</script>
+
+</body>
+</html>

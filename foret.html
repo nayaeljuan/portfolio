@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jeu point and click</title>
+    <link rel="stylesheet" href="style2.css">
+
+</head>
+<header><h1>Jeu Point and click</h1></header>
+<body>
+<div class="images-projet">
+    <video controls>
+        <source src="Video/video point and click.mp4" alt="point-and-click">
+    </video>
+    <div class="images-projet-line">
+        <img src="images/cabane.jpg" alt="Cabane"onclick="openModal();currentSlide(1)">
+        <img src="images/dome.jpg" alt="dome"onclick="openModal();currentSlide(2)">
+    
+    </div> 
+    <div class="images-projet-line">
+        <img src="images/foret.jpg" alt="foret"onclick="openModal();currentSlide(3)">
+        <img src="images/etage labo.jpg" alt="etage labo"onclick="openModal();currentSlide(4)">
+    </div>
+    <div class="images-projet-line">
+        <img src="images/etage manoir.jpg" alt="manoir"onclick="openModal();currentSlide(5)">
+        <img src="images/jardin.jpg" alt="jardin"onclick="openModal();currentSlide(6)">
+    </div>       
+</div>
+<div class="texte" id="photonarrativestxt">
+    <h3>P5.js, 2025</h3>
+    <p>Réalisé au cours d’un workshop sur P5.js (un site de programmation), ce jeu point and click a pour but de matérialiser le monde imaginaire d’une personne atteinte de trouble dissociatif de l’identité. J’ai monté ce projet avec mon amie Mosa, concernée par ce trouble, afin de mieux la comprendre et d’explorer son espace intérieur, dont elle me parle souvent. Les musique on été realisées par une IA afin de voir comment elle allait interpeter mes images. L'ajout de son permet aussi de ralentir la progression du visiteur et l'inciter a contempler chaque image et musiques. Vous pouvez tester le jeu <a href="https://editor.p5js.org/Naya.juan/full/XOJS7WlQu">ici</a>!
+    </p>
+    <a href="https://drive.google.com/file/d/1mir3oyhseqEqfkL-XnFfP0ZjolzIJJcI/view?usp=sharing" target="_blank" id="carte-mentale">
+        <h2>Carte mentale du projet</h2>
+     </a>
+</div>
+<div id="myModal" class="modal">
+    <span class="close cursor" onclick="closeModal()">&times;</span>
+    <div class="modal-content">
+      <div class="mySlides"><img src="images/cabane.jpg" style="height:100vh;"></div>
+      <div class="mySlides"><img src="images/dome.jpg" style="height:100vh;"></div>
+      <div class="mySlides"><img src="images/foret.jpg" style="height:100vh;"></div>
+      <div class="mySlides"><img src="images/etage labo.jpg" style="height: 100vh;"></div>
+      <div class="mySlides"><img src="images/etage manoir.jpg" style="height: 100vh;"></div>
+      <div class="mySlides"><img src="images/jardin.jpg" style="height: 100vh;"></div>
+
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+</div>
+
+<a href="index.html #contenu">
+    <img src="images/homebutton.png" id="home-button">
+
+</a>
+<script>
+    function openModal() {
+        document.getElementById("myModal").style.display = "block";
+    }
+
+    function closeModal() {
+        document.getElementById("myModal").style.display = "none";
+    }
+
+    let slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+        let i;
+        const slides = document.getElementsByClassName("mySlides");
+        if (n > slides.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        slides[slideIndex - 1].style.display = "block";
+    }
+</script>
+</body>
+</html>
