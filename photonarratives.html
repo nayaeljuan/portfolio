@@ -1,79 +1,91 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>photographie narrative</title>
+    <title>Photographie narrative</title>
     <link rel="stylesheet" href="style2.css">
-
 </head>
-<header><h1>Photographie narrative</h1></header>
+
 <body>
-<div class="images-projet">
-    <div class="images-projet-line">
-        <img src="images/photo-concours.jpg" alt="photo narrative 1"onclick="openModal();currentSlide(1)"> 
-        <img src="images/_DSC4560_1.jpg"onclick="openModal();currentSlide(2)">
+    <header>
+        <h1>Photographie narrative</h1>
+    </header>
+
+    <div class="images-projet">
+        <div class="images-projet-line">
+            <img src="images/photo-concours.jpg" alt="photo narrative 1" onclick="openModal();currentSlide(1)">
+            <img src="images/DSC4560.jpg" alt="photo narrative 2" onclick="openModal();currentSlide(2)">
+        </div>
+        <div class="images-projet-line">
+            <img src="images/DSC4588.jpg" alt="photo narrative 3" onclick="openModal();currentSlide(3)">
+            <img src="images/DSC4550.jpg" alt="photo narrative 4" onclick="openModal();currentSlide(4)">
+        </div>
     </div>
-    <div class="images-projet-line">
-        <img src="images/_DSC4588_1.jpg"onclick="openModal();currentSlide(3)">
-        <img src="images/_DSC4550.jpg"onclick="openModal();currentSlide(4)">
-    </div>
-</div>
-<div class="texte" id="photonarrativestxt">
-    <h3>2023</h3>
-    <p>Série de photos d’installation d’objets. J’ai mis en scène des objets dans un parc, comme s’ils avaient été oubliés, afin de suggérer une histoire mystérieuse. Les images se suffisent à elles-mêmes, laissant place à l’interprétation de chacun.</p>
-    <h2>Référence(s)</h2>
-    <figure>
-        <img src="images/cursed image.jpg" id="cursed-image">
-        <figcaption><strong>Esthetique des "cursed images"</strong><br> Les "cursed images" ou "images maudites" sont des images (souvent des photos) qui ont l'air derangeante ou mysterieuse à cause de leur mauvaise qualité et (surtout) leur manque de contexte.<br> Ce terme a été inventé sur tumblr en 2015.</figcaption>
-    </figure>
+
+    <div class="texte" id="photonarrativestxt">
+        <h3>2023</h3>
+        <p>
+            Série de photos d’installation d’objets. J’ai mis en scène des objets dans un parc, comme s’ils avaient été oubliés, afin de suggérer une histoire mystérieuse. Les images se suffisent à elles-mêmes, laissant place à l’interprétation de chacun.
+        </p>
+
+        <h2>Référence(s)</h2>
+        <figure>
+            <img src="images/cursed image.jpg" alt="cursed image" id="cursed-image">
+            <figcaption>
+                <strong>Esthétique des "cursed images"</strong><br>
+                Les "cursed images" ou "images maudites" sont des images (souvent des photos) qui ont l'air dérangeantes ou mystérieuses à cause de leur mauvaise qualité et (surtout) de leur manque de contexte.<br>
+                Ce terme a été inventé sur Tumblr en 2015.
+            </figcaption>
+        </figure>
     </div>
 
     <div id="myModal" class="modal">
         <span class="close cursor" onclick="closeModal()">&times;</span>
         <div class="modal-content">
-          <div class="mySlides"><img src="images/photo-concours.jpg" style="height:100vh;"></div>
-          <div class="mySlides"><img src="images/_DSC4560_1.jpg" style="height:100vh;"></div>
-          <div class="mySlides"><img src="images/_DSC4588 1.jpg" style="height:100vh;"></div>
-          <div class="mySlides"><img src="images/_DSC4550.jpg" style="height: 100vh;"></div>
-    
-          <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-          <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            <div class="mySlides"><img src="images/photo-concours.jpg" alt="photo 1" style="height:100vh;"></div>
+            <div class="mySlides"><img src="images/DSC4560.jpg" alt="photo 2" style="height:100vh;"></div>
+            <div class="mySlides"><img src="images/DSC4588.jpg" alt="photo 3" style="height:100vh;"></div>
+            <div class="mySlides"><img src="images/DSC4550.jpg" alt="photo 4" style="height:100vh;"></div>
+
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
         </div>
     </div>
-<a href="index.html#contenu">
-    <img src="images/homebutton.png" id="home-button">
-</a>
-<script>
-    function openModal() {
-        document.getElementById("myModal").style.display = "block";
-    }
 
-    function closeModal() {
-        document.getElementById("myModal").style.display = "none";
-    }
+    <a href="index.html#contenu">
+        <img src="images/homebutton.png" id="home-button" alt="Retour à l'accueil">
+    </a>
 
-    let slideIndex = 1;
-    showSlides(slideIndex);
-
-    function plusSlides(n) {
-        showSlides(slideIndex += n);
-    }
-
-    function currentSlide(n) {
-        showSlides(slideIndex = n);
-    }
-
-    function showSlides(n) {
-        let i;
-        const slides = document.getElementsByClassName("mySlides");
-        if (n > slides.length) {slideIndex = 1}
-        if (n < 1) {slideIndex = slides.length}
-        for (i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";
+    <script>
+        function openModal() {
+            document.getElementById("myModal").style.display = "block";
         }
-        slides[slideIndex - 1].style.display = "block";
-    }
-</script>
+
+        function closeModal() {
+            document.getElementById("myModal").style.display = "none";
+        }
+
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            const slides = document.getElementsByClassName("mySlides");
+            if (n > slides.length) slideIndex = 1;
+            if (n < 1) slideIndex = slides.length;
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slides[slideIndex - 1].style.display = "block";
+        }
+    </script>
 </body>
 </html>
